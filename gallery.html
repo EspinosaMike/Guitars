@@ -45,6 +45,9 @@ h2 {	font-family:'Vampiro One';
 	font-size: 75px;
 	text-align: center;
 	}
+	
+.mySlides {display:none;}
+
 </style>
 </head>
 <body>
@@ -60,7 +63,7 @@ h2 {	font-family:'Vampiro One';
 	
 <div style="padding-left:17px">
 
-<div class="w3-content w3-display-container">
+<div class="w3-content w3-section" style="max-width:500px">
   <img class="mySlides" src="http://www.davidsantistevan.com/wp-content/uploads/2010/12/839949_88280422.jpg" style="width:100%">
   <img class="mySlides" src="https://www.gearslutz.com/board/attachments/reviews/270996d1326129011-taylor-414ce-electro-acoustic-guitar-tay4.jpg" style="width:100%">
   <img class="mySlides" src="http://cf.ltkcdn.net/guitar/images/slide/55381-850x563-Acoustic_with_pickguard.jpg" style="width:100%">
@@ -75,27 +78,22 @@ h2 {	font-family:'Vampiro One';
     <img class="mySlides" src="https://reverb-res.cloudinary.com/image/upload/v1472498706/ufrdac1m5ehk3wqm0bqv.jpg" style="width:100%">
     <img class="mySlides" src="http://cdn.mos.musicradar.com/images/features/108-rock-star-guitars/jimmy-page-double-neck-main-630-80.jpg" style="width:100%">
 
-  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
 </div>
 
 <script>
-var slideIndex = 1;
-showDivs(slideIndex);
+var myIndex = 0;
+carousel();
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
-
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";  
-  }
-  x[slideIndex-1].style.display = "block";  
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 2000); // Change image every 3 seconds
 }
 </script>
  
