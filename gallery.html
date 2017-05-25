@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<title>Guitars</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<head>
+<link href='//fonts.googleapis.com/css?family=Architects Daughter' rel='stylesheet'>
+<link href='//fonts.googleapis.com/css?family=Annie Use Your Telescope' rel='stylesheet'>
+<style>
+body {margin:0;}
+body {
+	width: 100%;
+    height: 950px;
+    background-image: url('hah.jpg');
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+	}
+	
+.topnav {
+  overflow: hidden;
+  background-color: black;
+}
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 20px 21px;
+  text-decoration: none;
+  font-size: 18px;
+}
+.topnav a:hover {
+  background-color: red;
+  color: #FFD700;
+}
+.topnav a.active {
+    background-color: gray;
+    color: black;
+}
+a {
+	font-family: 'Architects Daughter';
+	color: #778899;
+	font-size: 60px;
+	text-align: center;
+}
+h2 {	font-family:'Vampiro One';
+	color: #D0D3D4;
+	font-size: 75px;
+	text-align: center;
+	}
+</style>
+</head>
+<body>
+	
+<div class="topnav">
+  <a href="index.html">Home</a>
+  <a href="origin.html">Origin</a>
+  <a href="types.html">Types</a>
+  <a class="active" href="gallery.html">Gallery</a>
+</div>
+
+<h2 class="w3-center">GALLERY</h2>
+
+<div class="w3-content w3-display-container">
+  <img class="mySlides" src="img_fjords.jpg" style="width:100%">
+  <img class="mySlides" src="img_lights.jpg" style="width:100%">
+  <img class="mySlides" src="img_mountains.jpg" style="width:100%">
+  <img class="mySlides" src="img_forest.jpg" style="width:100%">
+
+  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+</div>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
+
+
+<div style="padding-left:17px">
+ 
+</body>
+</html>
